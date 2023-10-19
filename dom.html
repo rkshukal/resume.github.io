@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent {
+            padding-top: 50px;
+            padding-left: 40%;
+        }
+        
+        #box {
+            height: 100px;
+            width: 100px;
+            background: red;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <div id="box" onclick="clicked()">
+
+        </div>
+        <h4 id="heading">
+            Box clicked <span id="sp">0</span> times
+        </h4>
+    </div>
+    <div id="my"></div>
+
+    <script>
+        var i = 1;
+
+        function clicked() {
+            document.getElementById('sp').innerText = i++;
+        }
+
+        function isValidIdentifier(string) {
+            var a = `${string} is not a valid identifier`;
+            var b = `${string} is a valid identifier`;
+            if (!((string.charAt(0) >= 'a' && string.charAt(0) <= 'z') ||
+                    (string.charAt(0) >= 'A' && string.charAt(0) <= 'Z') ||
+                    (string.charAt(0) == '_') || (string.charAt(0) == '$') {
+
+                        return a;
+                    }
+
+                    for (let i = 1; i < string.lenght(); i++) {
+                        if (!((string.charAt(i) >= 'a' && string.charAt(i) <= 'z') ||
+                                (string.charAt(i) >= 'A' && string.charAt(i) <= 'Z') ||
+                                (string.charAt(i) == '_') || (string.charAt(i) == '$') ||
+                                (string.charAt(i) >= 0 && string.charAt(i) <= 9)) {
+                                return a;
+                            }
+                        }
+                    }
+                    return b;
+
+                }
+
+
+                isValidIdentifier("myVariable"); // Logs: myVariable is a valid identifier.
+                isValidIdentifier("123abc"); // Logs: 123abc is not a valid identifier.
+                isValidIdentifier("_pr&ivate"); // Logs: _pr&ivate is not a valid identifier.
+    </script>
+</body>
+
+</html>
